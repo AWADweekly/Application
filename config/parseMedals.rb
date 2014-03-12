@@ -10,7 +10,7 @@ obj = JSON.parse(f)
 length = obj.keys.length
 i = 0
 while i < length
- puts obj[obj.keys[i]]['gold']
+	
   @medal.name = obj[obj.keys[i]]['name']
   @medal.gold = obj[obj.keys[i]]['gold']    
   @medal.silver = obj[obj.keys[i]]['silver']
