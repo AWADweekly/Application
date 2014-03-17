@@ -47,8 +47,9 @@
 </head>
 
 <body>
- 
+  </br></br>
   <div id='map_canvas'></div>
+  <div class='mapcontrols'>
   <% if @game == 1%>
       <input style="font-weight: bold; padding: 5px 10px"; value = "Check for gold medals" type ="submit" />
       <input style="font-weight: bold; padding: 5px 10px"; value = "Check for silver medals" type ="submit" />
@@ -58,9 +59,13 @@
     
     
     
-  <%end%>  
+  <%end%>
   
+<p>Refresh the page if the map does not load immediately. (I don't know why this happens...)</p>
+  </div>
     
+    
+<p><%=link_to 'Return Home', root_path%></p>
 </body>
 
 </html>

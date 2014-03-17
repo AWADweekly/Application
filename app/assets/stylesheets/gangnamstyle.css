@@ -1,0 +1,49 @@
+.wholepage
+{
+    font-family:times;
+}
+
+h1
+{
+    text-align:center;
+    color:red;
+}
+
+.intro
+{
+    text-align: center;
+}
+
+table, th, td
+{
+    border: 1px solid black;
+}
+
+table
+{
+    width:50%;
+    margin-left:25%;
+    margin-right:25%
+}
+
+th
+{
+    height:50px;
+}
+
+td
+{
+    text-align:center;
+}
+
+#map_canvas
+{
+    margin-left:25%;
+    margin-right:25%;
+}
+
+.mapcontrols
+{
+    margin-left:25%;
+    margin-right:25%;
+}

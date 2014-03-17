@@ -78,6 +78,6 @@ class MedalsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def medal_params
-      params.require(:medal).permit(:code, :name, :gold, :silver, :bronze)
+      params.require(:medal).permit(:code, :name, :gold, :silver, :bronze, :showmap)
     end
 end

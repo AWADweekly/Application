@@ -1,33 +1,45 @@
-<h1>Listing medals</h1>
+<html>
+<head>
+  </head>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Gold</th>
-      <th>Silver</th>
-      <th>Bronze</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<body>
+  
+  <div class='wholepage'>
 
-  <tbody>
-    <% @medals.each do |medal| %>
+  <h1>London Olympics 2012 Medals</h1>
+
+  <div class='intro'>
+  <p>This web application was developed by Ross Gordon, Jamie Pryde and Sandra Rubio for CS2512 AWAD.</p>
+  </br></br></br>
+  <p>MAP: <%=link_to 'Click here', showmap_path%> to view a map of the countries that took part in the 2012 London Olympic Games and the number of gold medals they won.</p>
+  <p>TWITTER: Click here to view the olympic twitter feed.</p>
+  </br>
+  </div>
+  
+  
+  <table>
+    <thead>
       <tr>
-        <td><%= medal.name %></td>
-        <td><%= medal.gold %></td>
-        <td><%= medal.silver %></td>
-        <td><%= medal.bronze %></td>
-        <td><%= link_to 'Show', medal %></td>
-        <td><%= link_to 'Edit', edit_medal_path(medal) %></td>
-        <td><%= link_to 'Destroy', medal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th style="color:goldenrod">Gold</th>
+        <th style="color:silver">Silver</th>
+        <th style="color:saddlebrown">Bronze</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+   </thead>
 
-<br>
+    <tbody>
+     <% @medals.each do |medal| %>
+        <tr>
+          <td><%= medal.name %></td>
+          <td style="color:goldenrod"><%= medal.gold %></td>
+          <td style="color:silver"><%= medal.silver %></td>
+          <td style="color:saddlebrown"><%= medal.bronze %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Medal', new_medal_path %>
+  </div>
+  
+</body>
+</html>
