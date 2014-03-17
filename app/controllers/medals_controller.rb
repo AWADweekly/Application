@@ -60,6 +60,15 @@ class MedalsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def showmap
+    @countries = Medal.pluck(:name)    
+    @medals = Medal.pluck(:gold)
+    @medal = 'gold'
+    @game = 1
+    #@medal = params[:medal]
+    #@game = params[:game]
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
