@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :email, :username, :password, :password_confirmation
-  attr_accessor :password
+  #attr_accessible :email, :username, :password, :password_confirmation
+  #attr_accessor :password. this goes in authentication controller now apparently
   before_save :encrypt_password
 
   validates_confirmation_of :password
@@ -9,6 +9,13 @@ class User < ActiveRecord::Base
   validates_presence_of :username, :on => :create
   validates_uniqueness_of :email
   validates_uniqueness_of :username
+  
+def initialize(attributes = {})
+    super
+    attributes.each do |name, value|
+      send("#{name}=", value)
+    end
+  end
 
   def self.authenticate(email, password)
     user = find_by_email(email)
@@ -25,7 +32,7 @@ class User < ActiveRecord::Base
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
     end
   end
-#end
+  
 def self.authenticate_by_email(email, password)
   user = find_by_email(email)
   if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
@@ -42,4 +49,5 @@ def self.authenticate_by_username(username, password)
   else
     nil
   end
+end
 end
