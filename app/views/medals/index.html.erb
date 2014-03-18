@@ -10,18 +10,31 @@
 
   <div class='intro'>
   <p>This web application was developed by Ross Gordon, Jamie Pryde and Sandra Rubio for CS2512 AWAD.</p>
+  </div>
+  
   </br></br></br>
+<<<<<<< HEAD
   <p>MAP: <form action="/showmap"><input type="submit" value="Click here"> to view a map of the countries that took part in the 2012 London Olympic Games and the number of gold medals they won.</p>
   <p>TWITTER: Click here to view the olympic twitter feed.</p>
+=======
+  
+  <div class='livedata'>
+  <p><%=button_to 'Click here', showmap_path, :class => "button", :method => :get%>to view a map of the countries that took part in the 2012 London Olympic Games and the number of gold medals they won.</p>
+  <p>Click here to view the olympic twitter feed.</p>
+  </div>
+  
+>>>>>>> 6779198199dabbeb3cc3476eeddf4ade47febc18
   </br></br></br>
+  
+  <div class='search'>
   <h3>Search for a country</h3>
   <form action ="medals/search" method="post">
   <input name = "key" type="input" />
   <input value="Send" type="submit"/>
-  </form> 
-  </br>
+  </form>
   </div>
   
+  </br>
   
   <table>
     <thead>
