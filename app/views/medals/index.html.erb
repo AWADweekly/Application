@@ -1,6 +1,6 @@
 <html>
 <head>
-  </head>
+</head>
 
 <body>
   
@@ -13,6 +13,12 @@
   </br></br></br>
   <p>MAP: <%=link_to 'Click here', showmap_path%> to view a map of the countries that took part in the 2012 London Olympic Games and the number of gold medals they won.</p>
   <p>TWITTER: Click here to view the olympic twitter feed.</p>
+  </br></br></br>
+  <h3>Search for a country</h3>
+  <form action ="medals/search" method="post">
+  <input name = "key" type="input" />
+  <input value="Send" type="submit"/>
+  </form> 
   </br>
   </div>
   

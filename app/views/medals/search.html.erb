@@ -1,0 +1,22 @@
+<html>
+
+<head>
+  <title>Search results</title>
+</head>
+
+<body>
+  <h1>Search results</h1>
+  <table border="1">
+    <tr>
+      <td width="40%"><p align="center"><i><b>Name</b></i></td>
+    </tr>
+    <% @medals.each do |medal| %>
+    <tr>
+      <td><a href="<%=medal.id%>"><%=medal.name%></a></td>
+    </tr>
+    <% end %>
+  </table>
+  <p> <a href="/root"> Back</a>
+</body>
+
+</html>

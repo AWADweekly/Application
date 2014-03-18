@@ -69,6 +69,10 @@ class MedalsController < ApplicationController
     #@medal = params[:medal]
     #@game = params[:game]
   end
+  
+  def search
+  @medals = Medal.find(:all, :conditions => ["name LIKE ?", "%#{params[:key]}%"])
+  end 
 
   private
     # Use callbacks to share common setup or constraints between actions.
