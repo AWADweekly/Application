@@ -5,18 +5,28 @@
 </head>
 
 <body>
-  <h1>Search results</h1>
-  <table border="1">
-    <tr>
-      <td width="40%"><p align="center"><i><b>Name</b></i></td>
-    </tr>
-    <% @medals.each do |medal| %>
-    <tr>
-      <td><a href="<%=medal.id%>"><%=medal.name%></a></td>
-    </tr>
-    <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th style="color:goldenrod">Gold</th>
+        <th style="color:silver">Silver</th>
+        <th style="color:saddlebrown">Bronze</th>
+      </tr>
+   </thead>
+
+    <tbody>
+     <% @medals.each do |medal| %>
+        <tr>
+          <td><%= medal.name %></td>
+          <td style="color:goldenrod"><%= medal.gold %></td>
+          <td style="color:silver"><%= medal.silver %></td>
+          <td style="color:saddlebrown"><%= medal.bronze %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
-  <p> <a href="/root"> Back</a>
+  <p><%=link_to 'Return Home', root_path%></p>
 </body>
 
 </html>

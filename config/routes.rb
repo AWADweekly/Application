@@ -1,14 +1,17 @@
 Group::Application.routes.draw do
+  
+  root 'medals#index'
+  
   resources :medals do
   post 'search', :on => :collection
-end
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'medals#index'
+  
   get '/showmap' => 'medals#showmap'
 
   # Example of regular route:
