@@ -1,0 +1,7 @@
+# app/views/shared/_tweets.html.erb
+<section id="tweets">
+  <ul>
+    <% @tweets.each do |tweet| %>
+      <li><%= link_to tweet.text, "https://www.twitter.com/#{London2012}" %></li>
+  </ul>
+</section>
