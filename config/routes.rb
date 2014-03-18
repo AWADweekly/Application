@@ -8,7 +8,14 @@ Group::Application.routes.draw do
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  post "sign_in" => "authentication#login"
+  
+  get "/sign_in" => "authentication#sign_in"
+  get "/signed_out" => "authentication#signed_out"
+  get "/change_password" => "authentication#change_password"
+  get "/forgot_password" => "authentication#forgot_password"
+  get "/new_user" => "authentication#new_user"
+  get "/password_sent" => "authentication#password_sent"
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   
