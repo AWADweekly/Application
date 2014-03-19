@@ -1,7 +1,5 @@
 <html>
 <head>
-  <script type = "text/javascript" src = "jquery-1.11.0.min.js">    </script>
-  <script type = "text/javascript" src = "countdown.js">    </script>
 
   <script type='text/javascript' src='https://www.google.com/jsapi'></script>
   <script type='text/javascript'>
@@ -32,12 +30,14 @@
         data.addRows([[country[i], medals[i].toString()], ]);
         ++i;
       }
- 
-     
 
       var options = {};
+      var colors = new Array();
       options['dataMode'] = 'regions';
-      options['colors'] = [0xFFFF66, 0xFFFF33, 0xFFCC33, 0xFFCC00]; // - to +
+      if (<%=@key%> == '2') colors = [0xDCDCDC, 0xC0C0C0 , 0x808080, 0x2F4F4F];
+      else if (<%=@key%> == '1') colors = [0xFFFF66, 0xFFFF33, 0xFFCC33, 0xFFCC00];
+      else colors = [0xFFA54F, 0xEE9A49, 0xCC7F32, 0x8B4500];
+      options['colors'] = colors; // - to +
 
       var container = document.getElementById('map_canvas');
       var geomap = new google.visualization.GeoMap(container);
@@ -47,22 +47,14 @@
 </head>
 
 <body>
+  <h1><%=@thetitle%> Medals</h1>
   </br></br>
   <div id='map_canvas'></div>
   <div class='mapcontrols'>
-  <% if @game == 1%>
-      <input style="font-weight: bold; padding: 5px 10px"; value = "Check for gold medals" type ="submit" />
-      <input style="font-weight: bold; padding: 5px 10px"; value = "Check for silver medals" type ="submit" />
-      <input style="font-weight: bold; padding: 5px 10px"; value = "Check for bronze medals" type ="submit" />
-    
-  <% else %>
-    
-    
-    
-  <%end%>
-
+  <form action="/showmap" >  <input type="hidden", name="key" value='1' > <input style="font-weight: bold; padding: 5px 10px"; type ="submit" value="Check for Gold Medals"  /></form> 
+  <form action="/showmap" > <input type="hidden", name="key" value='2' ><input style="font-weight: bold; padding: 5px 10px"; type ="submit" value="Check for Silver Medals"  /></form>
+  <form action="/showmap" > <input type="hidden", name="key" value='3' ><input style="font-weight: bold; padding: 5px 10px"; type ="submit" value="Check for Bronze Medals"  /></form>
   
-<p>The refresh thing seems fixed by button on main page, but to view map right click on it. (I don't know why this happens...)</p>
 
   </div>
     

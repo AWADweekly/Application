@@ -63,12 +63,29 @@ class MedalsController < ApplicationController
   end
   
   def showmap
-    @countries = Medal.pluck(:name)    
-    @medals = Medal.pluck(:gold)
-    @medal = 'gold'
-    @game = 1
-    #@medal = params[:medal]
-    #@game = params[:game]
+    @countries = Medal.pluck(:name)
+    @key =  params[:key]
+      if @key != nil
+        if @key == '3'
+         medal = :Bronze
+        elsif @key == '2'
+         medal = :Silver
+        else medal = :Gold
+        end
+      else
+        medal = :Gold
+        @key = '1'
+      end
+    @medals = Medal.pluck(medal)
+    
+    if @key=='1'
+      @thetitle="Gold"
+    elsif @key=='2'
+      @thetitle="Silver"
+    elsif @key=='3'
+      @thetitle="Bronze"
+    end
+    
   end
   
   def search
