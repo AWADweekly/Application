@@ -18,7 +18,7 @@ class MedalsControllerTest < ActionController::TestCase
 
   test "should create medal" do
     assert_difference('Medal.count') do
-      post :create, medal: { bronze: @medal.bronze, code: @medal.code, gold: @medal.gold, name: @medal.name, silver: @medal.silver }
+      post :create, medal: { bronze: @medal.bronze, gold: @medal.gold, name: @medal.name, silver: @medal.silver }
     end
 
     assert_redirected_to medal_path(assigns(:medal))
@@ -35,7 +35,7 @@ class MedalsControllerTest < ActionController::TestCase
   end
 
   test "should update medal" do
-    patch :update, id: @medal, medal: { bronze: @medal.bronze, code: @medal.code, gold: @medal.gold, name: @medal.name, silver: @medal.silver }
+    patch :update, id: @medal, medal: { bronze: @medal.bronze, gold: @medal.gold, name: @medal.name, silver: @medal.silver }
     assert_redirected_to medal_path(assigns(:medal))
   end
 
@@ -43,7 +43,19 @@ class MedalsControllerTest < ActionController::TestCase
     assert_difference('Medal.count', -1) do
       delete :destroy, id: @medal
     end
-
-    assert_redirected_to medals_path
+  end  
+  
+  test "should load map" do
+    get :showmap
+    assert_response :success
+    assert_not_nil assigns(:medals)
   end
+  
+  test "should search for a country" do
+    get :search
+    assert_response :success
+    assert_not_nil assigns(:medals)
+  end
+  
+    assert_redirected_to medals_path
 end
