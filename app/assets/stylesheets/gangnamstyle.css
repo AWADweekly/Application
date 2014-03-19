@@ -62,9 +62,15 @@ td
 .livedata
 {
     text-align:left;
+    margin-left:25%;
 }
 
 .search
 {
     text-align:center;
+}
+
+.twitter
+{
+    margin-left:25%;
 }
