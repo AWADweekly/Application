@@ -1,5 +1,7 @@
 Group::Application.routes.draw do
   
+  #get "users/new"
+
   root 'medals#index'
   
   resources :medals do
@@ -7,19 +9,18 @@ Group::Application.routes.draw do
   end
   #post "new_user" => "authentication#register"
   # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
-  #post "sign_in" => "authentication#login"
-  #get "/sign_in" => "authentication#sign_in"
+  # See how all your routes lay out with "rake routes".   
   
-  #get "account_settings" => "authentication#account_settings"
-  #put "account_settings" => "authentication#set_account_info"
+  #root :to => "users#new"  
   
-  
-  #get "/signed_out" => "authentication#signed_out"
-  #get "/change_password" => "authentication#change_password"
-  #get "/forgot_password" => "authentication#forgot_password"
-  #get "/new_user" => "authentication#new_user"
-  #get "/password_sent" => "authentication#password_sent"
+get "log_in" => "users#login", :as => "log_in" 
+get "my_account" => "users#my_account", :as => "my_account"
+get "log_out" => "users#logout", :as => "log_out"
+get "sign_up" => "users#new", :as => "sign_up"
+resources :users do
+post 'process_login', :on => :collection
+end
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   
