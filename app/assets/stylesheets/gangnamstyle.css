@@ -39,8 +39,7 @@ td
 
 #map_canvas
 {
-    margin-left:25%;
-    margin-right:25%;
+    margin-left:35%;
 }
 
 .mapcontrols
@@ -62,7 +61,7 @@ td
 .livedata
 {
     text-align:left;
-    margin-left:25%;
+    margin-left:35%;
 }
 
 .search
@@ -72,5 +71,26 @@ td
 
 .twitter
 {
-    margin-left:25%;
+    margin-left:35%;
+}
+
+.mb1
+{
+    margin-left: 20%;
+    float: left;
+}
+
+.mb2
+{
+    float: left;
+}
+
+.mb3
+{
+    float: left; 
+}
+
+.home
+{
+    text-align: center;
 }

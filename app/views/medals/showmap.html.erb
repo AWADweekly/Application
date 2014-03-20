@@ -51,15 +51,17 @@
   </br></br>
   <div id='map_canvas'></div>
   <div class='mapcontrols'>
-  <form action="/showmap" >  <input type="hidden", name="key" value='1' > <input style="font-weight: bold; padding: 5px 10px"; type ="submit" value="Check for Gold Medals"  /></form> 
-  <form action="/showmap" > <input type="hidden", name="key" value='2' ><input style="font-weight: bold; padding: 5px 10px"; type ="submit" value="Check for Silver Medals"  /></form>
-  <form action="/showmap" > <input type="hidden", name="key" value='3' ><input style="font-weight: bold; padding: 5px 10px"; type ="submit" value="Check for Bronze Medals"  /></form>
+  <div class='mb1'><form action="/showmap" >  <input type="hidden", name="key" value='1' > <input style="font-weight: bold; padding: 5px 10px"; type ="submit" value="Check for Gold Medals"  /></form> </div>
+  <div class='mb2'><form action="/showmap" > <input type="hidden", name="key" value='2' ><input style="font-weight: bold; padding: 5px 10px"; type ="submit" value="Check for Silver Medals"  /></form> </div>
+  <div class='mb3'><form action="/showmap" > <input type="hidden", name="key" value='3' ><input style="font-weight: bold; padding: 5px 10px"; type ="submit" value="Check for Bronze Medals"  /></form> </div>
   
 
   </div>
     
-    
+</br></br>
+<div class='home'>
 <p><%=link_to 'Return Home', root_path%></p>
+</div>
 </body>
 
 </html>
