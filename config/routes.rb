@@ -13,13 +13,13 @@ Group::Application.routes.draw do
   
   #root :to => "users#new"  
   
-get "log_in" => "users#login", :as => "log_in" 
-get "my_account" => "users#my_account", :as => "my_account"
-get "log_out" => "users#logout", :as => "log_out"
-get "sign_up" => "users#new", :as => "sign_up"
-resources :users do
-post 'process_login', :on => :collection
-end
+	get "log_in" => "users#login", :as => "log_in" 
+	get "my_account" => "users#my_account", :as => "my_account"
+	get "log_out" => "users#logout", :as => "log_out"
+	get "sign_up" => "users#new", :as => "sign_up"
+	resources :users do
+	post 'process_login', :on => :collection
+	end
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
