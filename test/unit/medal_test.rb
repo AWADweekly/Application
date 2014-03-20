@@ -10,6 +10,7 @@ class MedalTest < ActiveSupport::TestCase
       :gold => '50',
       :silver => '30',
       :bronze => '10')
+    medal.save
     assert_equal "Country name", medal.name
   end
   

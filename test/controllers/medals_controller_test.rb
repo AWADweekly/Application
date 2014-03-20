@@ -57,5 +57,14 @@ class MedalsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:medals)
   end
   
-    assert_redirected_to medals_path
+  test "showmap should load the correct layout" do
+    get :showmap
+    assert_template layout: "layouts/application"
+  end
+  
+  test "search should load the correct template" do
+    get :search
+    assert_template :search
+  end
+  
 end
