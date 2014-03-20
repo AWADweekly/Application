@@ -11,5 +11,4 @@
            redirect_to :log_in
     end
     
-    has_mobile_fu
   end
