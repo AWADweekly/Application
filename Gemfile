@@ -38,7 +38,7 @@ gem 'twitter'
 gem 'rspec-rails', :group => [:development, :test]
 
 #Include mobile-fu
-gem 'mobile-fu'
+
 
 #Heroku gem
 gem 'rails_12factor', group: :production
