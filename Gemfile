@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 1.2'
 #Include the Twitter gem
 gem 'twitter'
 
+#Include rspec
+gem 'rspec-rails', :group => [:development, :test]
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
