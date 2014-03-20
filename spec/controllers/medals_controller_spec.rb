@@ -1,3 +1,6 @@
+require File.expand_path(File.dirname(__FILE__)+ '/../controllers/medals_controller')
+require File.expand_path(File.dirname(__FILE__)+ '/../controllers/application_controller')
+
 describe MedalController do
   describe "GET index" do
     it "assigns @medals" do

@@ -37,6 +37,9 @@ gem 'twitter'
 #Include rspec
 gem 'rspec-rails', :group => [:development, :test]
 
+#Include mobile-fu
+gem 'mobile-fu'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
