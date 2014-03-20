@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.3'
 gem 'protected_attributes'
 # Use postgresql as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 gem 'bcrypt', :require=>'bcrypt'
 #for encrypting passwords
 # Use SCSS for stylesheets
@@ -39,6 +39,11 @@ gem 'rspec-rails', :group => [:development, :test]
 
 #Include mobile-fu
 gem 'mobile-fu'
+
+#Heroku gem
+gem 'rails_12factor', group: :production
+
+ruby "1.9.3"
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
