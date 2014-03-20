@@ -89,7 +89,7 @@ class MedalsController < ApplicationController
   end
   
   def search
-  @medals = Medal.find(:all, :conditions => ["name LIKE ?", "%#{params[:key]}%"])
+  @medals = Medal.find(:all, :conditions => ["name ILIKE ?", "%#{params[:key]}%"])
   end 
 
   private
