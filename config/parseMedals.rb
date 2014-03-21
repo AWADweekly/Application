@@ -1,10 +1,11 @@
+#this was written by sandra
 #!/usr/bin/env ruby
 require 'json'
 RAILS_ENV = 'development'
 require File.expand_path('../environment', __FILE__)
 
-f = File.open("config/olympic-medals.json")
-f = File.read("config/olympic-medals.json")
+f = File.open("olympic-medals.json")
+f = File.read("olympic-medals.json")
 # scan leaves out punctuation such as ' and .
 # split divides by space and may work better doesn't
 obj = JSON.parse(f)

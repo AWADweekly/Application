@@ -1,3 +1,4 @@
+/*jamie did this*/
 .wholepage
 {
     font-family:times;
@@ -39,7 +40,8 @@ td
 
 #map_canvas
 {
-    margin-left:35%;
+    margin-left:25%;
+   
 }
 
 .mapcontrols

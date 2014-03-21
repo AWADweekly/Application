@@ -13,12 +13,16 @@
 #
 # Configure Using Gemfile
 # gem 'pg'
-#
 development:
-  adapter: postgresql
+  adapter: sqlite3
   encoding: unicode
-  database: g_development
-  pool: 5
+  database : g_development
+  pool : 5
+#development:
+  #adapter: postgresql
+  #encoding: unicode
+  #database: g_development
+ # pool: 5
   
 
 

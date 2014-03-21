@@ -1,18 +1,12 @@
 <html>
 <head>
-
+<!--sandra did this file-->
   <script type='text/javascript' src='https://www.google.com/jsapi'></script>
   <script type='text/javascript'>
    google.load('visualization', '1', {'packages': ['geomap']});
    google.setOnLoadCallback(drawMap);
-    function gimmevalues(res, map, size) {
-    var i = 0;
-      while (  size > i) {
-        res[i] = map[i];
-        ++i;
-      }
-    }
-    function drawMap() {
+  
+      function drawMap() {
       var data = new google.visualization.DataTable();
       var i = 0;
       var country = new Array();
@@ -38,6 +32,8 @@
       else if (<%=@key%> == '1') colors = [0xFFFFC2, 0xFFD801, 0xFFCC33, 0xFFCC00];
       else colors = [0xFCD59C, 0xEE9A49, 0xCC7F32, 0x8B4500];
       options['colors'] = colors; // - to +
+      options['width'] = '1024px';
+      options['height'] = '648px';
 
       var container = document.getElementById('map_canvas');
       var geomap = new google.visualization.GeoMap(container);

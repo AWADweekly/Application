@@ -1,3 +1,4 @@
+#this was written by ross
 class UsersController < ApplicationController  
    before_filter :login_required, :only => :my_account
   def new  

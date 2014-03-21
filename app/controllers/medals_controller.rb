@@ -1,3 +1,4 @@
+#this was a collaboration between the three of us
 class MedalsController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_medal, only: [:show, :edit, :update, :destroy]
@@ -89,7 +90,8 @@ class MedalsController < ApplicationController
   end
   
   def search
-  @medals = Medal.find(:all, :conditions => ["name ILIKE ?", "%#{params[:key]}%"])
+    
+  @medals = Medal.find(:all, :conditions => ["name LIKE ?", "%#{params[:key]}%"])
   end 
 
   private
